@@ -10,4 +10,3 @@ print(just)
 
 # answer = [[col for col in range(0,10)] for row in range(1,11)]
 # print(answer)
-

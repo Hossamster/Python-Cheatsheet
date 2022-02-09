@@ -11,6 +11,9 @@ print(instructor['name'])
 print(instructor["number of cats"])
 print(instructor[44])
 
+[print(key) for key,val in instructor.items() if val == "python"]
+
+
 # artist = {
 #     "first": "Neil",
 #     "last": "Young",

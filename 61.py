@@ -21,12 +21,11 @@ d.popitem()
 print(d)
 
 #update keys and values with another set of key-value pairs
-first = {}
-first.update(instructor)
-print(first)
 
-first['name'] = "Hamada"
-print(first)
+instructor.update({"Married":False})
+print(instructor)
 
-first.update(instructor)
-print(first)
+instructor['name'] = "Hamada"
+print(instructor)
+
+
