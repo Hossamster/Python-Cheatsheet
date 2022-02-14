@@ -1,2 +1,6 @@
-answer = {list1:list2 for list1,list2 in }
-# print(answer)
+temp = []
+    for x in my_list:
+        if x < 0:
+            temp.append(abs(x))
+        else:
+            temp.append(x)
