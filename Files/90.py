@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #Min and max
 print(max('c', 'd', 'a'))  # d
 nums = [40, 32, 6, 5, 10]
@@ -36,3 +37,6 @@ print(max(songs, key=lambda x: x['playcount'])['title'])
 # print(extremes([1,2,3,4,5]))
 # print(extremes((99,25,30,-7)))
 # print(extremes("alcatraz"))
+=======
+#Min and max
+>>>>>>> main
