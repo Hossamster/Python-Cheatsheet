@@ -1,4 +1,7 @@
-inventory = {'croissant': 19, 'bagel': 4, 'muffin': 8, 'cake': 1} #DON'T CHANGE THIS LINE!
+inventory = {'croissant': 19, 
+            'bagel': 4, 
+            'muffin': 8, 
+            'cake': 1} #DON'T CHANGE THIS LINE!
 
 # Make a copy of inventory and save it to a variable called stock_list USE A DICTIONARY METHOD
 stock_list = inventory.copy()

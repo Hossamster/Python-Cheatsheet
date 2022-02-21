@@ -16,5 +16,12 @@ for song in playlist['songs']:
     total_length += song.get('duration')
 print(total_length)
 
+print("\n")
+
+for i in playlist['songs']:
+    if i['title'] == 'atemn':
+        print(i['artist'])
+
 """
-you can not use list as a key in dictionary """
+you can not use list as a key in dictionary 
+"""

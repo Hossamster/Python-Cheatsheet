@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #Min and max
 print(max('c', 'd', 'a'))  # d
 nums = [40, 32, 6, 5, 10]
@@ -37,6 +36,10 @@ print(max(songs, key=lambda x: x['playcount'])['title'])
 # print(extremes([1,2,3,4,5]))
 # print(extremes((99,25,30,-7)))
 # print(extremes("alcatraz"))
-=======
 #Min and max
->>>>>>> main
+
+##########
+def extract_full_name(lst):
+    return list(map(lambda x:f"{x['first']} {x['last']}",lst))
+def triple_and_filter(lst):
+    return list(map(lambda a: 3*a, filter(lambda x: x % 4 == 0, lst)))

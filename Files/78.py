@@ -129,6 +129,13 @@ def multiple_letter_count(string):
     return {char:string.count(char) for char in string}
 print(multiple_letter_count("awesome"))
 """
+"""
+def multiple_letter_count(word):
+    my_dict = {}
+    for i in word:
+        my_dict.update({i:word.count(i)})
+    return my_dict
+"""
 ##################
 #Ex 7
 """
@@ -222,8 +229,8 @@ print(capitalize("hossam"))
 compact([0,1,2,"",[], False, {}, None, "All done"]) # [1,2, "All done"]
 '''
 """
-def compact(my_list):
-   return [val for val in [0,1,2,"",[], False, {}, None, "All done"] if bool(val) == True]
+def compact(lst):
+    return [haga for haga in lst if haga]
 print(compact([0,1,2,"",[], False, {}, None, "All done"]))
 """
 ############
@@ -262,5 +269,3 @@ partition([1,2,3,4], isEven) # [[2,4],[1,3]]
 #     return my
 #     """ 
 # print(partition([1,2,3,4], isEven))
-
-

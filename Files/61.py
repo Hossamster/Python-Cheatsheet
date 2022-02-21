@@ -29,3 +29,6 @@ instructor['name'] = "Hamada"
 print(instructor)
 
 
+#to change the name of the key
+instructor['the_new_key'] = instructor.pop("fav language")
+print(instructor)
