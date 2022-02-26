@@ -1,21 +1,31 @@
-from pyfiglet import figlet_format
-from termcolor import colored
-print(colored(figlet_format("Dad Joke 3000"),'magenta'))
-import requests
-url = "https://icanhazdadjoke.com/search"
-user_input = input("Let me tell you a joke! Give me a topic: ")
-res = requests.get(url,
-            headers={"Accept":"application/json"},
-            params={'term':user_input})
+class User:
+    active_users = 0
 
-results = (res.json())
-# print(results['results'])
+    @classmethod
+    def display_active_users(cls):
+        return f"There are {cls.active_users}"
+    
+    @classmethod
+    def from_string(cls,data_str):
+        firset,last,age = data_str.split(",")
+        return cls(firset,last,age)
+    
+    def __init__(self,first,last,age):
+        self.first = first
+        self.last = last
+        self.age = age
+        User.active_users += 1
+    def birthday(self):
+        self.age += 1
+        return f"Happy {self.age}th {self.first}"
+    # def __repr__(self):
+    #     return f"{self.first} has {self.age}"
 
+user1 = User("Hossam","Kamel",22)    
+user2 = User("Ahmed","Samy",29)    
 
-if len(results['results']) != 0:
-    print(f"I've got {len(results)} joke/s about {user_input}.Here's one: ") 
-    from random import randint
-    x = randint(0,len(results['results']) - 1)
-    print(results['results'][x]['joke'])
-else:
-    print(f"Sorry, I don't have any jokes about {user_input}! Please try again.")
+print(User.display_active_users())
+
+hoss = User.from_string("Loki,Oden,22")
+print(hoss.first)
+
