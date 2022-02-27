@@ -1,31 +1,31 @@
-class User:
-    active_users = 0
+class User():
+    def __init__(self,email):
+        self.email = email
 
-    @classmethod
-    def display_active_users(cls):
-        return f"There are {cls.active_users}"
+    def sign_in(self):
+        print('logged in')
+
+ 
+
+# class Archer(User):
+#     def __init__(self,name,num_arrows):
+#         self.name = name
+#         self.num_arrows = num_arrows
     
-    @classmethod
-    def from_string(cls,data_str):
-        firset,last,age = data_str.split(",")
-        return cls(firset,last,age)
-    
-    def __init__(self,first,last,age):
-        self.first = first
-        self.last = last
-        self.age = age
-        User.active_users += 1
-    def birthday(self):
-        self.age += 1
-        return f"Happy {self.age}th {self.first}"
-    # def __repr__(self):
-    #     return f"{self.first} has {self.age}"
+#     def another_attack(self):
+#         print(f'attacking with arrows: arrows left - {self.num_arrows}')
 
-user1 = User("Hossam","Kamel",22)    
-user2 = User("Ahmed","Samy",29)    
 
-print(User.display_active_users())
+# archer1 = Archer("Hassan",34)
+# archer1.sign_in()
+# archer1.another_attack()
 
-hoss = User.from_string("Loki,Oden,22")
-print(hoss.first)
+#
+# print(isinstance(wizard1,Wizard)) #true
+# print(isinstance(wizard1,User))   #true
+# print(isinstance(wizard1,object)) #true
 
+wizard1 = Wizard("Ahmed",25,"abc@g.com")
+print(wizard1.email)
+# wizard1.sign_in()
+# wizard1.attack()

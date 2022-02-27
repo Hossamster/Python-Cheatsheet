@@ -1,4 +1,5 @@
-# Class Methods 
+
+# Class Methods >> cls not self
 # __repr__  method is used to represent a class's objects as a string
 
 class User:
@@ -19,9 +20,11 @@ class User:
         self.last = last
         self.age = age
         User.acive_users += 1
+
     def birthday(self):
         self.age += 1
         return f"Happy {self.age}th {self.firt}"
+        
     def __repr__(self):
         return f"{self.first} has {self.age}"
 
