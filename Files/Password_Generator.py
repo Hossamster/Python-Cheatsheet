@@ -10,21 +10,22 @@ nr_symbols = int(input(f"How many symbols would you like?\n"))
 nr_numbers = int(input(f"How many numbers would you like?\n"))
 
 password = ''
-# for j in range(1,nr_letters+1):
-#     password += random.choice(letters)
-# for k in range(1,nr_numbers+1):
-#     password += random.choice(numbers)
-# for l in range(1,nr_symbols+1):
-#     password += random.choice(symbols)
-
-# print(password)
-
-n = 1
-letters.extend(numbers)
-letters.extend(symbols)
-while n <= (nr_letters+nr_numbers+nr_symbols):
+for j in range(1,nr_letters+1):
     password += random.choice(letters)
-    n += 1
+for k in range(1,nr_numbers+1):
+    password += random.choice(numbers)
+for l in range(1,nr_symbols+1):
+    password += random.choice(symbols)
 
 print(password)
+print(''.join(random.sample(password,len(password)))) # shuffle the string 
 
+
+# n = 1
+# letters.extend(numbers)
+# letters.extend(symbols)
+# while n <= (nr_letters+nr_numbers+nr_symbols):
+#     password += random.choice(letters)
+#     n += 1
+
+# print(password) 
