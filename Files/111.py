@@ -23,7 +23,7 @@ class User:
 
     def birthday(self):
         self.age += 1
-        return f"Happy {self.age}th {self.firt}"
+        return f"Happy {self.age}th {self.first}"
         
     def __repr__(self):
         return f"{self.first} has {self.age}"

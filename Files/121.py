@@ -1,9 +1,17 @@
-class GrumpyDict(dict):
+class Dic(dict):
     def __repr__(self):
-        print("None of your buisness")
+        print ("None of ur buisness ")
         return super().__repr__()
+    def __missing__(self,val):
+        return f"The thing [{val}] u want is not here"
+    def __set_item__(self,key,val):
+        print("Alright") 
+        super().__set_item__(key,val)
+        print("Done")
+    def __contains__(self, key):
+        return True if key in self.__dict__.keys() else False
 
-data = GrumpyDict({'first':'Hossam','gender':'male'})
+data = Dic({'first':'Hossam','gender':'male'})
 print(data)
 
 """

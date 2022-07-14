@@ -17,10 +17,10 @@ class Human:
     #         self._age = 0
 
     @property
-    def rage(self):
+    def age(self):
         return self._age
-    @rage.setter
-    def rage(self,new):
+    @age.setter
+    def age_set(self,new):
         if new >= 0:
             self._age = new
         else:
@@ -35,7 +35,7 @@ class Human:
         
 jane = Human("Samy", "Zarko", 23)
 # print(jane.age) # 23
-# jane.age = -100
+# jane.age_set = -100
 # print(jane.age) # -100
 # jane = Human("Samy","Zarko",-23)
 # print(jane.age) # 0
