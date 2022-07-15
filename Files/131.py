@@ -29,5 +29,6 @@ def ensure_first_arg(arg):
 def fav_persons(*persons):
     return persons
 
+print(fav_persons('Hossam','Manar','Jana'))
 print(fav_persons('d','Manar','Jana'))
 print(fav_persons())
