@@ -60,4 +60,4 @@ with open('ayhaga.csv', 'w',newline='') as file:
     csv_writer = DictWriter(file,fieldnames=headers)
     csv_writer.writeheader() 
     for i in csv_reader:
-        csv_writer.writerow({'Name':i['Name'],'Country':i['Country'],'Height':cm_to_in(i['Height (in cm)        in cm)]})   '])})
+        csv_writer.writerow({'Name':i['Name'],'Country':i['Country'],'Height':cm_to_in(i['Height (in cm)'])})

@@ -54,8 +54,27 @@ class custom_iterator(object):
             return res
         raise StopIteration
 k = custom_iterator(0, 5)
-for i in k:
-    print(i)
+# for i in k:
+#     print(i)
+
+# import pickle 
+# __import__('146')
+# with open('pets.pickle','rb') as file:
+#     a,b = pickle.load(file)
+#     c,d = pickle.load(file)
+# print(a)
+# print(b)
+# print(c)
+# print(d)
+import jsonpickle
+with open('cat.json','r') as file:
+    contents = file.read()
+    unfrozen = jsonpickle.decode(contents)
+
+print(unfrozen)
+
+
+
 
 
 
