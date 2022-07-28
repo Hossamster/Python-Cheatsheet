@@ -1,5 +1,4 @@
-from _102 import say_hi
-
+__import__('102')   
 def say_sup():
     print(f"Sup! my __name__ is {__name__}")
 

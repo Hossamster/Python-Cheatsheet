@@ -21,10 +21,10 @@ while url:
 
     next_btn = soup.find(class_='next')
     url = (next_btn.find('a')['href']) if next_btn else None
-    sleep(1)
+    # sleep(1)
 
 
-with open('ayhaga.csv','w',newline='',encoding='utf8') as file:
+with open('quotes.csv','w',newline='',encoding='utf8') as file:
     headers = ['text','author','bio-link']
     csv_writer = DictWriter(file, fieldnames=headers)
     csv_writer.writeheader()
