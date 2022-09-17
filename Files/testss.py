@@ -1,14 +1,28 @@
-class GrumpyDict(dict):
-    def __repr__(self):
-        print('none of ur buisness')
-        return super().__repr__()
-    def __missing__(self,key):
-        return (f"u want {key}? msh hena")
 
-    def __setitem__(self, key, val):
-        self[key] = val
+class makes_iterable:
+    def __init__(self,low,high):
+        self.current = low
+        self.high = high
+    def __iter__(self):
+        print('making iterator')
+        return myiterator(self.current,self.high)
 
+class myiterator:
+    def __init__(self,low,high):
+        self.current = low
+        self.high = high
+        
+    def __next__(self):
+        if self.current < self.high:
+            num  = self.current
+            self.current += 1
+            return num
+        raise StopIteration
 
-
-k = GrumpyDict({})
-print(dir(dict))
+po = makes_iterable(1,7)
+po = iter(po)
+print(po)
+print(po.__next__())
+print(po.__next__())
+print(po.__next__())
+# print(po)

@@ -66,3 +66,30 @@ class Counter:
 for x in Counter(0,10):
     print(x)
             
+
+
+#####################################################
+
+
+
+class CounterIterator:
+    def __init__(self, low, high):
+        self.current = low
+        self.high = high
+
+    def __next__(self):
+        if self.current < self.high:
+            num = self.current
+            self.current += 1
+            return num
+        raise StopIteration
+
+
+class MyCounter:
+    def __init__(self, low, high):
+        self.low = low
+        self.high = high
+
+    def __iter__(self):
+        print("Creating an iterator!")
+        return CounterIterator(self.low, self.high)
