@@ -60,6 +60,7 @@ res = requests.get(url)
 # res = requests.get(url,headers={"Accept":"text/plain"})
 # print(res.text)
 
+# res = requests.get(url,headers = {'Accept':'text/plain'})
 res = requests.get(url,headers={"Accept":"application/json"})
 data = res.json() # dict
 print(data) # {'id': 'prWDIBdiGlb', 'joke': 'I just wrote a book on reverse psychology. Do not read it!', 'status': 200}

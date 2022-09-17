@@ -1,4 +1,4 @@
-# Dictionary methods (clear,copy,formkey,get)
+# Dictionary methods (clear,copy,fromkeys,get)
 instructor = {
     "name" : "Hossam",
     "Owns cat" :True,

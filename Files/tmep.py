@@ -1,97 +1,50 @@
-# import pyfiglet
-# class Human(dict):
-#     def __repr__(self): 
-#         return super().__repr__()
-#     def __missing__(self,val):
-#         return f"This thing [{val}] is not here"
-#     def __setitem__(self,key,val):
-#         super().__setitem__(key,val)
-#         print (f"{pyfiglet.figlet_format('DONE')}")
-#     def __setattr__(self, name, value):
-#         self.__dict__[name] = value
-#     def __getattr__(self,val):
-#         print("ok")
-#         return self.__dict__.get(val)
-#     def __contains__(self,kv):
-#         if kv in self.__dict__.keys() or kv in self.__dict__.values:
-#             return True 
-#     def __getitem__(self,thing):
-#         print( self[thing])
-        
-# k = Human({"name":'Hossam'})
-# k['name'] = 'Hamada'
-# print(k)
-# # k.sam = 'dsa'
-# print(k['sam'])
+# import requests
+# url = "https://icanhazdadjoke.com/search"
+
+# res = requests.get(url,headers = {'Accept':'text/plain'})
+# res = requests.get(url,headers = {'Accept':'application/json'})
+
+# print(res.ok)
+# print(res.headers)
+# print(res.text)
+# print(type(res.text))
+# data = res.json()
+# print(data)
+# print(data['joke'])
+# print(f"status:{data['status']}")
+# print(type(data))
+# print(res.status_code)
 
 
+# params = {'term':'wife','limit':2}
+# res = requests.get(url,params = params,headers={'Accept':'Application/json'})
+# k = res.json()
+
+# for joke in k.get('results'):
+#     print(joke['joke'])
+#     print('\n')
 
 
-name = "Hossam"
-name = iter(name)
-# print(next(name))
-# print(next(name))
-# print(next(name))
-# print(next(name))
-# print(next(name))
-
-# while True:
-#     try:
-#         print(next(name))
-#     except StopIteration:
-#         break
-
-class custom_iterator(object):
-    def __init__(self,low,high):
-        self.current = low
-        self.high = high
-    def __iter__(self):
-        return self
-    def __next__(self):
-        if self.current <= self.high:
-            res = self.current
-            self.current +=1
-            return res
-        raise StopIteration
-k = custom_iterator(0, 5)
-# for i in k:
-#     print(i)
-
-# import pickle 
-# __import__('146')
-# with open('pets.pickle','rb') as file:
-#     a,b = pickle.load(file)
-#     c,d = pickle.load(file)
-# print(a)
-# print(b)
-# print(c)
-# print(d)
-import jsonpickle
-with open('cat.json','r') as file:
-    contents = file.read()
-    unfrozen = jsonpickle.decode(contents)
-
-print(unfrozen)
+from pyfiglet import figlet_format
+from termcolor import colored
+from random import randint
+import requests
+print(colored(figlet_format('Hossam Jokes'),color = 'magenta'))
+input = str(input('Give me a topic to tell u a joke: '))
+url = "https://icanhazdadjoke.com/search"
+response = requests.get(url,params = {'term':input},headers = {'Accept':'application/json'})
+length = (len(response.json()['results']))
 
 
+r = (randint(0,len(response.json()['results'])-1))
+print(r)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+if length < 1:
+    print('No jokes for this topic')
+else: 
+    ans = (response.json()['results'][r]['joke'])
+    print(f"I've got {length} about {input}. Here it is: ")
+    print(ans)
 
 
 

@@ -1,0 +1,12 @@
+CREATE TABLE dogs (name TEXT,breed TEXT,age INTEGER);
+.tables
+ls
+.open
+INSERT INTO cats (name,breed,age) VALUES ("mshmsh","sheraz",1.5);
+SELECT * FROM cats;
+.read basics.sql
+SELECT * FROM dogs WHERE name IS 'Piggy'
+SELECT name FROM dogs WHERE age IS '11'
+SELECT * FROM dogs WHERE breed IS NOT 'Chihuahua' AND breed IS NOT 'Lab'
+SELECT * FROM dogs WHERE age > 9
+SELECT * FROM dogs WHERE name Like "%gg%"   

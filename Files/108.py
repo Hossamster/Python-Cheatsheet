@@ -1,6 +1,7 @@
 #underscores 
 # _name     >> telling developers that this supposed to be private or for internal use
 # __name    >> name mangling >> object._class__name
+
 # __name__  >> something exist in python otherwise not technially wrong but bad idea or used for python specific method
 
 # class Person:
